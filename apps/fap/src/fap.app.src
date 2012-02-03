@@ -1,0 +1,13 @@
+{application, fap,
+ [
+  {description, "Femto Access Point"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+		  %VKI
+                 ]},
+  {mod, { fap_app, []}},
+  {env, []}
+ ]}.

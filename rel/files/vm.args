@@ -1,0 +1,32 @@
+## Name of the node
+-sname fap
+
+## Cookie for distributed erlang
+-setcookie fap
+
+## Heartbeat management; auto-restarts VM if it dies or becomes unresponsive
+## (Disabled by default..use with caution!)
+##-heart
+
+
+## Replace default Erlang/OTP info/error/warning event handling mechanism. 
+##
+## term_max_size: For arguments formatted in FormatString and ArgList style, 
+## if the total size of ArgList is more than term_max_size, then we'll ignore 
+## FormatString and log the message with a well-known (and therefore safe) 
+## formatting string. The default is 10KBytes.
+## fmt_max_bytes: When formatting a log-related term that might be "big", limit 
+## the term's formatted output to a maximum of fmt_max_bytes bytes. 
+## The default is 12KBytes
+-riak_err term_max_size 4096 
+-riak_err fmt_max_bytes 8192
+
+## Enable kernel poll and a few async threads
++K true
++A 5
+
+## Increase number of concurrent ports/sockets
+-env ERL_MAX_PORTS 4096
+
+## Tweak GC to run more often
+-env ERL_FULLSWEEP_AFTER 10

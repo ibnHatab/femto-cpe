@@ -1,0 +1,13 @@
+{application, cdb,
+ [
+  {description, "Configuration Database"},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib,
+		  mnesia
+                 ]},
+  {mod, { cdb_app, []}},
+  {env, []}
+ ]}.
